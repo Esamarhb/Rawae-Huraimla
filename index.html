@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>روائع حريملاء للحفلات والمناسبات</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Cairo',sans-serif;
+background:#050505;
+overflow-x:hidden;
+color:white;
+}
+
+/* BACKGROUND */
+
+.bg-video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-2;
+overflow:hidden;
+}
+
+.bg-video::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:
+linear-gradient(rgba(0,0,0,.75),
+rgba(0,0,0,.88));
+}
+
+.bg-video video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* GOLD GLOW */
+
+.glow{
+position:fixed;
+width:400px;
+height:400px;
+border-radius:50%;
+background:
+radial-gradient(circle,
+rgba(212,175,55,.22),
+transparent 70%);
+pointer-events:none;
+z-index:-1;
+transform:translate(-50%,-50%);
+}
+
+/* PETALS */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:1;
+}
+
+/* NAVBAR */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:999;
+backdrop-filter:blur(18px);
+background:rgba(0,0,0,.25);
+border-bottom:
+1px solid rgba(255,215,0,.1);
+}
+
+.container{
+width:90%;
+max-width:1300px;
+margin:auto;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo-area img{
+width:70px;
+height:70px;
+border-radius:50%;
+border:2px solid rgba(255,215,0,.3);
+}
+
+.logo-text h2{
+color:#d4af37;
+font-size:24px;
+}
+
+.logo-text span{
+font-size:13px;
+color:#ccc;
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:17px;
+transition:.4s;
+}
+
+.nav-links a:hover{
+color:#d4af37;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+position:relative;
+overflow:hidden;
+}
+
+.hero-content{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:50px;
+width:100%;
+}
+
+.hero-text{
+flex:1;
+z-index:10;
+}
+
+.small-title{
+color:#d4af37;
+font-size:18px;
+letter-spacing:2px;
+}
+
+.hero-text h1{
+font-size:75px;
+line-height:1.3;
+margin:20px 0;
+font-weight:900;
+}
+
+.hero-text h1 span{
+color:#d4af37;
+}
+
+.hero-text p{
+line-height:2;
+color:#ddd;
+font-size:18px;
+max-width:700px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 35px;
+border-radius:50px;
+text-decoration:none;
+transition:.4s;
+font-size:18px;
+}
+
+.gold-btn{
+background:
+linear-gradient(45deg,#d4af37,#FFD700);
+color:#111;
+font-weight:bold;
+}
+
+.gold-btn:hover{
+transform:translateY(-6px);
+}
+
+.outline-btn{
+border:1px solid #d4af37;
+color:white;
+}
+
+.outline-btn:hover{
+background:#d4af37;
+color:black;
+}
+
+.hero-logo{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero-logo img{
+width:420px;
+max-width:100%;
+border-radius:50%;
+animation:float 5s ease-in-out infinite;
+box-shadow:
+0 0 60px rgba(255,215,0,.25);
+}
+
+@keyframes float{
+50%{
+transform:translateY(-25px);
+}
+}
+
+/* SECTION */
+
+section{
+padding:120px 0;
+position:relative;
+z-index:5;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title span{
+color:#d4af37;
+}
+
+.section-title h2{
+font-size:42px;
+margin-top:10px;
+}
+
+/* GLASS */
+
+.glass{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(18px);
+border:
+1px solid rgba(255,255,255,.08);
+}
+
+/* ABOUT */
+
+.about-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.about-card{
+padding:40px;
+border-radius:30px;
+transition:.4s;
+}
+
+.about-card:hover{
+transform:translateY(-10px);
+}
+
+.about-card i{
+font-size:45px;
+color:#d4af37;
+margin-bottom:20px;
+}
+
+/* SERVICES */
+
+.services-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.service-card{
+padding:40px;
+border-radius:30px;
+text-align:center;
+transition:.4s;
+background:
+rgba(255,255,255,.04);
+border:
+1px solid rgba(255,215,0,.1);
+}
+
+.service-card:hover{
+transform:
+translateY(-12px)
+scale(1.03);
+}
+
+.service-card i{
+font-size:55px;
+color:#d4af37;
+margin-bottom:20px;
+}
+
+/* WHY */
+
+.why-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.why-box{
+padding:40px;
+text-align:center;
+border-radius:30px;
+}
+
+.why-box i{
+font-size:45px;
+margin-bottom:20px;
+color:#d4af37;
+}
+
+/* CONTACT */
+
+.contact-box{
+padding:50px;
+border-radius:30px;
+}
+
+.contact-item{
+display:flex;
+gap:15px;
+margin-bottom:25px;
+font-size:20px;
+}
+
+.contact-item i{
+color:#d4af37;
+}
+
+/* FOOTER */
+
+footer{
+padding:30px;
+text-align:center;
+border-top:
+1px solid rgba(255,255,255,.1);
+color:#aaa;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:991px){
+
+.hero-content{
+flex-direction:column;
+text-align:center;
+padding-top:120px;
+}
+
+.hero-text h1{
+font-size:45px;
+}
+
+.nav-links{
+display:none;
+}
+
+.hero-logo img{
+width:280px;
+}
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+background:
+linear-gradient(#d4af37,#FFD700);
+border-radius:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND VIDEO -->
+<div class="bg-video">
+<video autoplay muted loop playsinline>
+<source src="https://cdn.coverr.co/videos/coverr-elegant-wedding-venue-1562254536668?download=1080p" type="video/mp4">
+</video>
+</div>
+
+<!-- GOLD GLOW -->
+<div class="glow"></div>
+
+<!-- PETALS -->
+<canvas id="petals"></canvas>
+
+<!-- NAVBAR -->
+
+<header>
+
+<div class="container nav">
+
+<div class="logo-area">
+
+<img src="https://i.postimg.cc/Nf57xgb1/compressed-1780510692033.webp">
+
+<div class="logo-text">
+<h2>روائع حريملاء</h2>
+<span>Rawae Huraimla</span>
+</div>
+
+</div>
+
+<div class="nav-links">
+<a href="#about">من نحن</a>
+<a href="#services">الخدمات</a>
+<a href="#contact">تواصل معنا</a>
+</div>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div class="hero-text">
+
+<div class="small-title">
+✦ Luxury Weddings & Events ✦
+</div>
+
+<h1>
+نصنع من مناسباتكم
+<span>لحظاتٍ تُروى</span>
+</h1>
+
+<p>
+في مؤسسة روائع حريملاء للحفلات والمناسبات،
+نحوّل التفاصيل إلى تجربة فاخرة تنبض بالأناقة،
+الفخامة، والتميّز عبر حلول متكاملة تشمل
+التجهيز، الديكور، الضيافة، والخدمات التشغيلية
+بأسلوب احترافي يليق بعملائنا.
+</p>
+
+<div class="buttons">
+
+<a href="tel:0553944780" class="btn gold-btn">
+<i class="fa-solid fa-phone"></i>
+اتصال مباشر
+</a>
+
+<a href="https://wa.me/966553944780"
+class="btn outline-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+واتساب
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-logo">
+<img src="https://i.imgur.com/9m4KQ8X.jpg">
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+<span>نبذة عنا</span>
+<h2>الفخامة تبدأ من التفاصيل</h2>
+</div>
+
+<div class="about-grid">
+
+<div class="about-card glass">
+
+<i class="fa-solid fa-gem"></i>
+
+<h3>من نحن</h3>
+
+<p>
+نعتمد على نموذج متكامل لتجهيز الحفلات
+والمناسبات يشمل الأثاث، الديكور،
+الضيافة، والخدمات التشغيلية
+بأعلى مستوى من الجودة.
+</p>
+
+</div>
+
+<div class="about-card glass">
+
+<i class="fa-solid fa-crown"></i>
+
+<h3>رؤيتنا</h3>
+
+<p>
+أن نكون الخيار الأول في عالم
+المناسبات الفاخرة عبر تقديم تجربة
+استثنائية تتجاوز التوقعات.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-title">
+<span>خدماتنا</span>
+<h2>حلول متكاملة للمناسبات</h2>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+<i class="fa-solid fa-couch"></i>
+<h3>تأجير الأثاث</h3>
+<p>
+كراسي، جلسات، مطاولات،
+زل وسجاد فاخر.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-champagne-glasses"></i>
+<h3>التصميم والديكور</h3>
+<p>
+تنسيق المداخل،
+الكوش، والإضاءة.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-mug-hot"></i>
+<h3>الضيافة والتشغيل</h3>
+<p>
+قهوجيين وصبابين
+بمستوى احترافي.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-truck-fast"></i>
+<h3>النقل والتركيب</h3>
+<p>
+توصيل، تركيب،
+وفك كامل للموقع.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY US -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<span>لماذا نحن ؟</span>
+<h2>أناقة تُصنع بإتقان</h2>
+</div>
+
+<div class="why-grid">
+
+<div class="why-box glass">
+<i class="fa-solid fa-award"></i>
+<h3>احترافية عالية</h3>
+</div>
+
+<div class="why-box glass">
+<i class="fa-solid fa-heart"></i>
+<h3>اهتمام بالتفاصيل</h3>
+</div>
+
+<div class="why-box glass">
+<i class="fa-solid fa-star"></i>
+<h3>فخامة استثنائية</h3>
+</div>
+
+<div class="why-box glass">
+<i class="fa-solid fa-shield"></i>
+<h3>ثقة وجودة</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-title">
+<span>تواصل معنا</span>
+<h2>نسعد بخدمتكم</h2>
+</div>
+
+<div class="contact-box glass">
+
+<div class="contact-item">
+<i class="fa-solid fa-phone"></i>
+<span>0553944780</span>
+</div>
+
+<div class="contact-item">
+<i class="fa-brands fa-instagram"></i>
+<span>@haai_k3</span>
+</div>
+
+<div class="contact-item">
+<i class="fa-solid fa-location-dot"></i>
+<span>
+حريملاء - الشارع العام - طريق الملك عبدالعزيز - الرياض
+</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© جميع الحقوق محفوظة |
+مؤسسة روائع حريملاء للحفلات والمناسبات
+ @Esam_marhb</footer>
+
+<script>
+
+// GOLD GLOW
+
+const glow = document.querySelector(".glow");
+
+document.addEventListener("mousemove",(e)=>{
+
+glow.style.left=e.clientX+"px";
+glow.style.top=e.clientY+"px";
+
+});
+
+// PETALS
+
+const canvas=document.getElementById("petals");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let petals=[];
+
+class Petal{
+
+constructor(x,y){
+
+this.x=x;
+this.y=y;
+
+this.size=Math.random()*10+6;
+
+this.speedX=(Math.random()-.5)*4;
+this.speedY=Math.random()*3+1;
+
+this.opacity=1;
+
+this.rotation=Math.random()*360;
+
+}
+
+draw(){
+
+ctx.save();
+
+ctx.translate(this.x,this.y);
+
+ctx.rotate(this.rotation*Math.PI/180);
+
+ctx.globalAlpha=this.opacity;
+
+ctx.beginPath();
+
+ctx.moveTo(0,0);
+
+ctx.quadraticCurveTo(
+this.size,
+-this.size,
+this.size*2,
+0
+);
+
+ctx.quadraticCurveTo(
+this.size,
+this.size,
+0,
+0
+);
+
+ctx.fillStyle="#d4af37";
+
+ctx.fill();
+
+ctx.restore();
+
+}
+
+update(){
+
+this.x+=this.speedX;
+this.y+=this.speedY;
+
+this.rotation+=2;
+
+this.opacity-=0.015;
+
+this.draw();
+
+}
+
+}
+
+document.addEventListener("mousemove",(e)=>{
+
+for(let i=0;i<2;i++){
+
+petals.push(
+new Petal(
+e.clientX,
+e.clientY
+)
+);
+
+}
+
+});
+
+function animate(){
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+for(let i=0;i<petals.length;i++){
+
+petals[i].update();
+
+if(petals[i].opacity<=0){
+
+petals.splice(i,1);
+i--;
+
+}
+
+}
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+window.addEventListener("resize",()=>{
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+});
+
+</script>
+
+</body>
+</html>
